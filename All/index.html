@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ciberseguridad | Liceo Comercial Vate Vicente Huidobro</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --light-color: #ecf0f1;
+            --dark-color: #2c3e50;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #333;
+        }
+        
+        .navbar {
+            background-color: var(--primary-color) !important;
+        }
+        
+        .navbar-brand {
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+        }
+        
+        .navbar-brand:hover {
+            transform: scale(1.02);
+        }
+        
+        .navbar-brand img {
+            height: 40px;
+            border-radius: 4px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .hero-banner {
+            background: linear-gradient(rgba(44, 62, 80, 0.8), rgba(44, 62, 80, 0.8)), 
+                        url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 100px 0;
+            margin-bottom: 50px;
+        }
+        
+        .card {
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+            margin-bottom: 30px;
+            height: 100%;
+        }
+        
+        .card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .card-icon {
+            font-size: 2.5rem;
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+        }
+        
+        .btn-primary {
+            background-color: var(--secondary-color);
+            border: none;
+            padding: 10px 25px;
+        }
+        
+        .btn-primary:hover {
+            background-color: #2980b9;
+        }
+        
+        .section-title {
+            position: relative;
+            margin-bottom: 50px;
+            color: var(--primary-color);
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--secondary-color);
+        }
+        
+        .team-member {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 50px 0 20px;
+        }
+        
+        .social-icons a {
+            color: white;
+            font-size: 1.5rem;
+            margin: 0 10px;
+            transition: color 0.3s;
+        }
+        
+        .social-icons a:hover {
+            color: var(--secondary-color);
+        }
+        
+        .simulation-section {
+            background-color: var(--light-color);
+            padding: 50px 0;
+            margin: 50px 0;
+        }
+        
+        /* Estilos para el equipo en línea */
+        .team-row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        
+        .team-item {
+            background-color: white;
+            padding: 15px 20px;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            min-width: 180px;
+            text-align: center;
+        }
+        
+        @media (max-width: 768px) {
+            .team-row {
+                flex-direction: column;
+                align-items: center;
+            }
+            .team-item {
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar Modificado -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="#">
+                <img src="img/n-vvh.png" alt="Logo" class="me-2">
+                <span class="d-none d-sm-inline">Liceo Comercial Vate Vicente Huidobro</span>
+                <span class="d-inline d-sm-none">LCVVH</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#problema">Problema</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#solucion">Solución</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#equipo">Equipo</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contacto">Contacto</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Banner -->
+    <section class="hero-banner text-center">
+        <div class="container">
+            <h1 class="display-4 fw-bold mb-4">Protegiendo tu Mundo Digital</h1>
+            <p class="lead mb-5">Conoce los riesgos cibernéticos y aprende a protegerte con nuestra simulación interactiva</p>
+            <a href="#solucion" class="btn btn-primary btn-lg">Ver Solución</a>
+        </div>
+    </section>
+
+    <!-- Problema Section -->
+    <section id="problema" class="py-5">
+        <div class="container">
+            <h2 class="text-center section-title">El Problema de Ciberseguridad en Chile</h2>
+            
+            <div class="row">
+                <div class="col-md-6">
+                    <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" 
+                        alt="Ciberataques" class="img-fluid rounded mb-4">
+                </div>
+                <div class="col-md-6">
+                    <p class="lead">Chile enfrenta una crisis de ciberseguridad que afecta directamente la vida diaria, el patrimonio y la confianza en las instituciones.</p>
+                    <p>En 2024, Chile sufrió <strong>27.600 millones de intentos de ciberataques</strong>, posicionándose como el tercer país más atacado en Latinoamérica.</p>
+                    <p>El phishing creció un <strong>109%</strong>, afectando principalmente a adultos de 25-49 años en la Región Metropolitana.</p>
+                    <div class="alert alert-danger mt-4">
+                        <i class="fas fa-exclamation-triangle me-2"></i>
+                        La falta de conocimiento en ciberseguridad no es un problema abstracto; es una emergencia que exige una respuesta inmediata.
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row mt-5">
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body text-center">
+                            <div class="card-icon">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <h4 class="card-title">Ataques Constantes</h4>
+                            <p class="card-text">Chile recibe millones de intentos de ciberataques diariamente, poniendo en riesgo información personal y financiera.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body text-center">
+                            <div class="card-icon">
+                                <i class="fas fa-user-secret"></i>
+                            </div>
+                            <h4 class="card-title">Phishing en Aumento</h4>
+                            <p class="card-text">El engaño a través de correos y mensajes fraudulentos ha aumentado un 109%, siendo la principal amenaza.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body text-center">
+                            <div class="card-icon">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+                            <h4 class="card-title">Falta de Educación</h4>
+                            <p class="card-text">La mayoría de los usuarios no cuenta con conocimientos básicos para protegerse de estas amenazas digitales.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solución Section -->
+    <section id="solucion" class="simulation-section">
+        <div class="container">
+            <h2 class="text-center section-title">Nuestra Solución</h2>
+            
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h3>Simulación Interactiva de Ciberseguridad</h3>
+                    <p>Nuestra propuesta consiste en una experiencia interactiva que permite comprender cómo pueden verse afectadas las personas por los ciberataques.</p>
+                    
+                    <ul class="list-group list-group-flush mb-4">
+                        <li class="list-group-item bg-transparent"><i class="fas fa-check-circle text-success me-2"></i> Experiencia práctica de situaciones reales</li>
+                        <li class="list-group-item bg-transparent"><i class="fas fa-check-circle text-success me-2"></i> Sensibilización sobre riesgos digitales</li>
+                        <li class="list-group-item bg-transparent"><i class="fas fa-check-circle text-success me-2"></i> Orientación práctica para prevenir ataques</li>
+                        <li class="list-group-item bg-transparent"><i class="fas fa-check-circle text-success me-2"></i> Accesible a través de una plataforma web</li>
+                    </ul>
+                    
+                    <a href="#contacto" class="btn btn-primary">Probar Simulación</a>
+                </div>
+                
+                <div class="col-lg-6 mt-4 mt-lg-0">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" 
+                        alt="Simulación interactiva" class="img-fluid rounded shadow">
+                </div>
+            </div>
+            
+            <div class="row mt-5">
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="card-title"><i class="fas fa-laptop-code me-2"></i> Prototipo de Simulación</h4>
+                            <p>Nuestro prototipo consiste en una página web interactiva que guía al usuario a través de escenarios comunes de ciberataques:</p>
+                            <ul>
+                                <li>Identificación de correos de phishing</li>
+                                <li>Creación de contraseñas seguras</li>
+                                <li>Protección de datos personales</li>
+                                <li>Reconocimiento de sitios web fraudulentos</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="card-title"><i class="fas fa-bullseye me-2"></i> Objetivos del Proyecto</h4>
+                            <p>Nuestra iniciativa se alinea con el ODS 4: Educación de Calidad, buscando:</p>
+                            <ul>
+                                <li>Reducir la brecha de conocimiento en ciberseguridad</li>
+                                <li>Empoderar a los usuarios con herramientas de protección</li>
+                                <li>Crear conciencia sobre los riesgos digitales</li>
+                                <li>Fomentar prácticas seguras en el entorno digital</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Equipo Section - Versión Horizontal -->
+    <section id="equipo" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center section-title">Nuestro Equipo</h2>
+            <p class="text-center mb-5">Somos un equipo multidisciplinario comprometido con cerrar la brecha de conocimiento en ciberseguridad.</p>
+            
+            <div class="team-row">
+                <div class="team-item">
+                    <h5>Mariangel Pirona</h5>
+                    <p class="text-muted small mb-0">Líder / Editor Informe</p>
+                </div>
+                
+                <div class="team-item">
+                    <h5>Benjamin Santander</h5>
+                    <p class="text-muted small mb-0">Líder / Programador</p>
+                </div>
+                
+                <div class="team-item">
+                    <h5>Ignacio Garrido</h5>
+                    <p class="text-muted small mb-0">Programador / Editor Informe</p>
+                </div>
+                
+                <div class="team-item">
+                    <h5>Vicente Berrios</h5>
+                    <p class="text-muted small mb-0">Diseñador</p>
+                </div>
+                
+                <div class="team-item">
+                    <h5>Alessando Espinoza</h5>
+                    <p class="text-muted small mb-0">Diseñador</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contacto Section -->
+    <section id="contacto" class="py-5">
+        <div class="container">
+            <h2 class="text-center section-title">Contáctanos</h2>
+            
+            <div class="row">
+                <div class="col-lg-6 mx-auto">
+                    <div class="card">
+                        <div class="card-body">
+                            <form>
+                                <div class="mb-3">
+                                    <label for="nombre" class="form-label">Nombre</label>
+                                    <input type="text" class="form-control" id="nombre" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="email" class="form-label">Correo Electrónico</label>
+                                    <input type="email" class="form-control" id="email" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="mensaje" class="form-label">Mensaje</label>
+                                    <textarea class="form-control" id="mensaje" rows="5" required></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Enviar Mensaje</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <h5>Sobre el Proyecto</h5>
+                    <p>Iniciativa educativa del Liceo Comercial Vate Vicente Huidobro, 4° Medio E, para concientizar sobre ciberseguridad.</p>
+                </div>
+                
+                <div class="col-md-4 mb-4 mb-md-0 text-center">
+                    <h5>Redes Sociales</h5>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <h5>Contacto</h5>
+                    <p><i class="fas fa-map-marker-alt me-2"></i> Liceo Comercial Vate Vicente Huidobro</p>
+                    <p><i class="fas fa-envelope me-2"></i> ciberseguridad@liceovate.cl</p>
+                </div>
+            </div>
+            
+            <hr class="mt-4 mb-3" style="border-color: rgba(255,255,255,0.1);">
+            
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="mb-0">© 2024 Ciberseguridad. Todos los derechos reservados.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <p class="mb-0">ODS 4: Educación de Calidad</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
